@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vajont Dam Disaster - Realistic Simulation</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="container">
+        <div id="canvas-container"></div>
+        
+        <div id="info-box">
+            <h2>Vajont Dam Disaster (1963)</h2>
+            <p>This simulation recreates the geological conditions that led to one of history's worst dam disasters. On October 9, 1963, a massive landslide from Mount Toc entered the Vajont reservoir in northern Italy, creating a tsunami that killed nearly 2,000 people.</p>
+            
+            <h3>Key Elements</h3>
+            <ul>
+                <li><span class="key-element mountain">Mount Toc</span>: The unstable mountain with layers of limestone and clay</li>
+                <li><span class="key-element clay">Clay Layer</span>: The weak geological layer along which failure occurred</li>
+                <li><span class="key-element water">Reservoir</span>: The Vajont reservoir that saturated the mountain</li>
+                <li><span class="key-element dam">Arch Dam</span>: The 262m tall concrete dam that survived the disaster</li>
+            </ul>
+            
+            <h3>The Disaster Progression</h3>
+            <ol>
+                <li>Rising reservoir levels saturated the mountain's porous limestone</li>
+                <li>Water pressure built up along a prehistoric clay layer</li>
+                <li>After heavy rainfall, the entire mountainside (270 million m³) slid into the reservoir</li>
+                <li>The displaced water created a 250m wave that overtopped the dam</li>
+            </ol>
+            
+            <h3>Controlling the Simulation</h3>
+            <p>• Click and drag to orbit the scene</p>
+            <p>• Scroll to zoom in/out</p>
+            <p>• Adjust water level with the slider</p>
+            <p>• Use view buttons for different perspectives</p>
+            <p>• Play the complete disaster sequence to see the events unfold</p>
+        </div>
+        
+        <button id="toggle-info">i</button>
+        
+        <div id="view-controls">
+            <button class="view-button" id="view-aerial">Aerial View</button>
+            <button class="view-button" id="view-front">Dam View</button>
+            <button class="view-button" id="view-slope">Mount Toc</button>
+            <button class="view-button" id="view-geology">Geology View</button>
+        </div>
+        
+        <div id="ui-container">
+            <label for="waterLevel">Reservoir Water Level</label>
+            <input type="range" id="waterLevel" min="0" max="100" value="30">
+            <div id="stability-indicator">Stability: Good</div>
+            <div class="controls-row">
+                <button id="reset-button">Reset</button>
+                <button id="disaster-button">Play Disaster Sequence</button>
+            </div>
+        </div>
+        
+        <div id="timeline">
+            <div id="timeline-progress"></div>
+        </div>
+        
+        <div id="loading-screen">
+            <div class="spinner"></div>
+            <p>Loading terrain and textures...</p>
+            <div id="loading-progress">0%</div>
+        </div>
+    </div>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.163.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.163.0/examples/jsm/"
+        }
+      }
+    </script>
+    
+    <!-- Scripts -->
+    <script type="module" src="js/utils.js"></script>
+    <script type="module" src="js/terrain.js"></script>
+    <script type="module" src="js/water.js"></script>
+    <script type="module" src="js/geology.js"></script>
+    <script type="module" src="js/animation.js"></script>
+    <script type="module" src="js/controls.js"></script>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
