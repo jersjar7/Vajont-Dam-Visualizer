@@ -80,7 +80,7 @@ export default class SimulationController {
      */
     _setupScene() {
         // Import SceneView dynamically to avoid circular dependencies
-        import('../views/SceneView.js').then(({ default: SceneView }) => {
+        import('../views/sceneView.js').then(({ default: SceneView }) => {
             this.views.scene = new SceneView(this.container);
             this.views.scene.createSkyEnvironment();
             
@@ -114,7 +114,7 @@ export default class SimulationController {
      */
     _setupViews() {
         // Import UIView dynamically to avoid circular dependencies
-        import('../views/UIView.js').then(({ default: UIView }) => {
+        import('../views/viewUI.js').then(({ default: UIView }) => {
             this.views.ui = new UIView();
             
             // Store UI elements
