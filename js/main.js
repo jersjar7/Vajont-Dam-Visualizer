@@ -3,7 +3,7 @@
  * Initializes the simulation and starts the application
  */
 
-import SimulationController from '../controllers/SimulationController.js';
+import SimulationController from './controllers/SimulationController.js';
 
 // Start the application when document is ready
 document.addEventListener('DOMContentLoaded', () => {
